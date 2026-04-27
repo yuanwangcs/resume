@@ -9,7 +9,9 @@ var Resume = React.createClass({
             <div className="resume-container animated fadeInUp">
                 <header style={header_style}>
                     {!this.props.resume.avatar ? "" :
-                        <img className="avatar" src={this.props.resume.avatar} />
+                        <div className="avatar-frame">
+                            <img className="avatar" src={this.props.resume.avatar} />
+                        </div>
                     }
                 </header>
                 <BasicInfo basicinfo={this.props.resume.basicinfo}/>

@@ -9,7 +9,9 @@ var Resume = React.createClass({displayName: "Resume",
             React.createElement("div", {className: "resume-container animated fadeInUp"}, 
                 React.createElement("header", {style: header_style}, 
                     !this.props.resume.avatar ? "" :
-                        React.createElement("img", {className: "avatar", src: this.props.resume.avatar})
+                        React.createElement("div", {className: "avatar-frame"}, 
+                            React.createElement("img", {className: "avatar", src: this.props.resume.avatar})
+                        )
                     
                 ), 
                 React.createElement(BasicInfo, {basicinfo: this.props.resume.basicinfo}), 
@@ -184,4 +186,3 @@ fetch('/resume/data/resume.json')
   }).catch(function(ex) {
     console.log('parsing failed', ex)
   })
-

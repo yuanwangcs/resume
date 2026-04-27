@@ -48,16 +48,23 @@ body {
   background-size: cover;
   position: relative;
 }
-.resume-container header img.avatar {
+.resume-container header .avatar-frame {
   border: 4px solid whitesmoke;
   border-radius: 50%;
+  box-sizing: border-box;
   width: 98px;
   height: 98px;
-  object-fit: cover;
-  object-position: center;
+  overflow: hidden;
   position: absolute;
   bottom: -27%;
   left: 42%;
+}
+.resume-container header img.avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .resume-container .basicinfo {
   background-color: #fafafa;
@@ -152,7 +159,6 @@ body {
   max-height: 58px;
   width: auto;
   height: auto;
-  border: 1px solid #dbe6f2;
 }
 .resume-container .experiencelist .experience .description {
   color: rgba(85, 85, 85, 0.9);
