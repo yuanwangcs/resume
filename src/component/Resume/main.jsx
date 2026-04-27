@@ -3,18 +3,22 @@ var Resume = React.createClass({
         var header_style = {
             backgroundImage: this.props.resume.background_image ? "url(link)".replace('link', this.props.resume.background_image) : ""
         }
+        var sections = this.props.resume.sections || []
 
         return (
             <div className="resume-container animated fadeInUp">
                 <header style={header_style}>
-                    <img className="avatar" src={this.props.resume.avatar} />
+                    {!this.props.resume.avatar ? "" :
+                        <img className="avatar" src={this.props.resume.avatar} />
+                    }
                 </header>
                 <BasicInfo basicinfo={this.props.resume.basicinfo}/>
                 <Social social={this.props.resume.social}/>
-                <ExperienceList type="获奖经历" experiences={this.props.resume.Awards}/>
-                <ExperienceList type="社团/组织" experiences={this.props.resume.socialExperiences}/>
-                <ExperienceList type="实习经历" experiences={this.props.resume.InternExperiences}/>
-                <ExperienceList type="项目经验" experiences={this.props.resume.ProjectExperience}/>
+                {sections.map(function(section){
+                    return (
+                        <ExperienceList type={section.title} experiences={section.experiences} key={section.title}/>
+                    )
+                })}
             </div>
         )
     }
@@ -31,14 +35,24 @@ var BasicInfo = React.createClass({
                 <div className="text-info description">
                     {this.props.basicinfo.description}
                 </div>
-                <div className="text-info">
-                    <i className="fa fa-university"></i>
-                    {this.props.basicinfo.school}·{this.props.basicinfo.profession}
-                </div>
-                <div className="text-info">
-                    <i className="fa fa-user"></i>
-                    {this.props.basicinfo.sex}·{this.props.basicinfo.education}·{this.props.basicinfo.workage}
-                </div>
+                {!this.props.basicinfo.affiliation ? "" :
+                    <div className="text-info">
+                        <i className="fa fa-university"></i>
+                        {this.props.basicinfo.affiliation}
+                    </div>
+                }
+                {!this.props.basicinfo.discipline ? "" :
+                    <div className="text-info">
+                        <i className="fa fa-graduation-cap"></i>
+                        {this.props.basicinfo.discipline}
+                    </div>
+                }
+                {!this.props.basicinfo.research_interests ? "" :
+                    <div className="text-info interests">
+                        <i className="fa fa-lightbulb-o"></i>
+                        {this.props.basicinfo.research_interests}
+                    </div>
+                }
                 <div className="phone text-info inline-block">
                     {!this.props.basicinfo.phone ? "" :
                         <div>
@@ -62,6 +76,9 @@ var BasicInfo = React.createClass({
 
 var Social = React.createClass({
     render: function(){
+        if(!this.props.social || !this.props.social.length){
+            return <section className="social"></section>
+        }
         return (
             <section className="social">
                 {this.props.social.map(function(item){
@@ -86,6 +103,9 @@ var Social = React.createClass({
 
 var ExperienceList = React.createClass({
     render: function(){
+        if(!this.props.experiences || !this.props.experiences.length){
+            return <div></div>
+        }
         return (
             <section className="experiencelist">
                 <div className="experience-type">
@@ -130,19 +150,21 @@ var Experience  = React.createClass({
                             {this.props.experience.title}
                         </div>
                     </div>
-                    <div className="fr time-location">
-                        <div className="time">
-                            {this.props.experience.time}
+                    {!this.props.experience.time && !this.props.experience.location ? "" :
+                        <div className="fr time-location">
+                            <div className="time">
+                                {this.props.experience.time}
+                            </div>
+                            <div className="location">
+                                {!this.props.experience.location ? "" :
+                                    <div>
+                                        <i className="fa fa-map-marker"></i>
+                                        {this.props.experience.location}
+                                    </div>
+                                }
+                            </div>
                         </div>
-                        <div className="location">
-                            {!this.props.experience.location ? "" :
-                                <div>
-                                    <i className="fa fa-map-marker"></i>
-                                    {this.props.experience.location}
-                                </div>
-                            }
-                        </div>
-                    </div>
+                    }
                 </div>
                 {!this.props.experience.description ? "" :
                     <div className="description">
