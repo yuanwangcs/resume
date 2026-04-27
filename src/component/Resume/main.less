@@ -115,16 +115,20 @@ body{
                     min-width: 160px;
                 }
             }
-            .icon,
-            .icon img{
+            .icon{
                 width: 58px;
                 height: 58px;
                 margin-right: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             .icon img{
+                max-width: 58px;
+                max-height: 58px;
+                width: auto;
+                height: auto;
                 border: 1px solid #dbe6f2;
-                border-radius: 50%;
-                object-fit: cover;
             }
             .description{
                 color: rgba(85, 85, 85, 0.9);

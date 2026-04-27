@@ -136,16 +136,20 @@ body {
   margin: 4px;
   min-width: 160px;
 }
-.resume-container .experiencelist .experience .icon,
-.resume-container .experiencelist .experience .icon img {
+.resume-container .experiencelist .experience .icon {
   width: 58px;
   height: 58px;
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .resume-container .experiencelist .experience .icon img {
+  max-width: 58px;
+  max-height: 58px;
+  width: auto;
+  height: auto;
   border: 1px solid #dbe6f2;
-  border-radius: 50%;
-  object-fit: cover;
 }
 .resume-container .experiencelist .experience .description {
   color: rgba(85, 85, 85, 0.9);
@@ -175,4 +179,3 @@ body {
     margin-left: 0;
   }
 }
-
