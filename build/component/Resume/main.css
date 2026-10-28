@@ -48,6 +48,41 @@ body {
   background-size: cover;
   position: relative;
 }
+.resume-container header .language-switch {
+  position: absolute;
+  top: 24px;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  background: #f5f9fd;
+  color: #6b7c90;
+  font-size: 0.9rem;
+}
+.resume-container header .language-switch button {
+  border: 0;
+  border-radius: 5px;
+  padding: 7px 12px;
+  background: transparent;
+  color: #234d76;
+  font: inherit;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.resume-container header .language-switch button:hover {
+  background: #dceaf8;
+}
+.resume-container header .language-switch button[aria-pressed="true"] {
+  background: #1f69b3;
+  color: #fff;
+}
+.resume-container header .language-switch button:focus-visible {
+  outline: 2px solid #0f4c8a;
+  outline-offset: 2px;
+}
 .resume-container header .avatar-frame {
   border: 4px solid whitesmoke;
   border-radius: 50%;
@@ -185,6 +220,9 @@ body {
   }
   .resume-container header .avatar-frame {
     left: 24px;
+  }
+  .resume-container header .language-switch {
+    right: 24px;
   }
   .resume-container .basicinfo {
     padding: 64px 24px 0;

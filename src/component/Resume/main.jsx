@@ -1,20 +1,44 @@
 var Resume = React.createClass({
+    getInitialState: function() {
+        return { language: "en" };
+    },
+    componentDidMount: function() {
+        this.updateDocumentLanguage();
+    },
+    componentDidUpdate: function() {
+        this.updateDocumentLanguage();
+    },
+    updateDocumentLanguage: function() {
+        document.documentElement.lang = this.state.language === "zh" ? "zh-CN" : "en";
+        document.title = this.state.language === "zh" ? "袁旺 | 学术简历" : "Yuan Wang | Academic Resume";
+    },
+    setLanguage: function(language) {
+        this.setState({ language: language });
+    },
     render: function() {
+        var language = this.state.language;
+        var translations = this.props.resume.translations || {};
+        var resume = translations[language] || this.props.resume;
         var header_style = {
             backgroundImage: this.props.resume.background_image ? "url(link)".replace('link', this.props.resume.background_image) : ""
         }
-        var sections = this.props.resume.sections || []
+        var sections = resume.sections || []
 
         return (
             <div className="resume-container animated fadeInUp">
                 <header style={header_style}>
+                    <div className="language-switch" role="group" aria-label={language === "zh" ? "语言" : "Language"}>
+                        <button type="button" lang="zh-CN" aria-pressed={language === "zh"} onClick={this.setLanguage.bind(this, "zh")}>中文</button>
+                        <span aria-hidden="true">/</span>
+                        <button type="button" lang="en" aria-pressed={language === "en"} onClick={this.setLanguage.bind(this, "en")}>English</button>
+                    </div>
                     {!this.props.resume.avatar ? "" :
                         <div className="avatar-frame">
-                            <img className="avatar" src={this.props.resume.avatar} />
+                            <img className="avatar" src={this.props.resume.avatar} alt={resume.basicinfo.name} />
                         </div>
                     }
                 </header>
-                <BasicInfo basicinfo={this.props.resume.basicinfo}/>
+                <BasicInfo basicinfo={resume.basicinfo}/>
                 <Social social={this.props.resume.social}/>
                 {sections.map(function(section){
                     return (
@@ -178,7 +202,7 @@ var Experience  = React.createClass({
     }
 })
 
-fetch('/resume/data/resume.json?v=20261028-ai-infra')
+fetch('/resume/data/resume.json?v=20261028-i18n')
   .then(function(response) {
     return response.json()
   }).then(function(json) {

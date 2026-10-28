@@ -65,5 +65,62 @@
                 }
             ]
         }
-    ]
+    ],
+    "translations": {
+        "zh": {
+            "basicinfo": {
+                "name": "袁旺",
+                "description": "计算机科学与技术博士研究生",
+                "affiliation": "华中科技大学",
+                "discipline": "计算机科学与技术",
+                "research_interests": "研究方向：索引结构、AI Infra / Agent Infra、GDS",
+                "email": "ywangcs@hust.edu.cn"
+            },
+            "sections": [
+                {
+                    "title": "教育经历",
+                    "experiences": [
+                        {
+                            "name": "华中科技大学",
+                            "name_link": "https://www.hust.edu.cn/",
+                            "title": "计算机科学与技术博士（在读）",
+                            "icon": "/resume/data/assets/hust-logo.png",
+                            "description": "计算机体系结构",
+                            "time": "2024 年 — 至今",
+                            "location": "中国 · 武汉"
+                        },
+                        {
+                            "name": "重庆大学",
+                            "name_link": "https://www.cqu.edu.cn/",
+                            "title": "计算机科学与技术工学学士",
+                            "icon": "/resume/data/assets/cqu-logo.png",
+                            "description": "系统学习计算机科学基础与计算机系统相关课程。",
+                            "time": "2020 年 — 2024 年",
+                            "location": "中国 · 重庆"
+                        }
+                    ]
+                },
+                {
+                    "title": "研究方向",
+                    "experiences": [
+                        {
+                            "name": "索引结构",
+                            "title": "高效数据访问与索引机制",
+                            "description": "关注面向现代数据密集型系统的实用索引设计。"
+                        },
+                        {
+                            "name": "AI Infra / Agent Infra",
+                            "title": "AI 推理系统与 Agent Infra",
+                            "description": "关注高效 KVCache 管理，以及面向 AI 推理与 Agent 的可扩展基础设施。"
+                        },
+                        {
+                            "name": "GDS",
+                            "title": "基于 GPUDirect Storage 的高吞吐数据访问",
+                            "description": "探索存储与 GPU 显存之间的直接数据传输，以优化数据密集型工作负载。"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
