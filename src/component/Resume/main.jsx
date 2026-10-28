@@ -178,7 +178,7 @@ var Experience  = React.createClass({
     }
 })
 
-fetch('/resume/data/resume.json')
+fetch('/resume/data/resume.json?v=20261028-ai-infra')
   .then(function(response) {
     return response.json()
   }).then(function(json) {

@@ -6,7 +6,7 @@
         "description": "Ph.D. Student in Computer Science and Technology",
         "affiliation": "Huazhong University of Science and Technology",
         "discipline": "Computer Science and Technology",
-        "research_interests": "Research Interests: Index Structures, KVCache / Agent Infra, GDS",
+        "research_interests": "Research Interests: Index Structures, AI Infra / Agent Infra, GDS",
         "email": "ywangcs@hust.edu.cn"
     },
     "social": [
@@ -54,9 +54,9 @@
                     "description": "Interested in practical index designs for modern data-intensive systems."
                 },
                 {
-                    "name": "KVCache / Agent Infra",
-                    "title": "KV cache management and infrastructure for AI agents",
-                    "description": "Interested in efficient KV cache management and scalable infrastructure for AI agents."
+                    "name": "AI Infra / Agent Infra",
+                    "title": "AI inference systems and infrastructure for agents",
+                    "description": "Interested in efficient KV cache management and scalable infrastructure for AI inference and agents."
                 },
                 {
                     "name": "GDS",
