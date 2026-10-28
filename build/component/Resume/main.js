@@ -126,7 +126,7 @@ var ExperienceList = React.createClass({displayName: "ExperienceList",
 var Experience  = React.createClass({displayName: "Experience",
     render: function(){
         return (
-            React.createElement("section", {className: "experience"}, 
+            React.createElement("section", {className: this.props.experience.icon ? "experience has-icon" : "experience"},
                 React.createElement("div", {className: "clearfix item"}, 
                     (function(icon){
                         if(icon && icon != ''){

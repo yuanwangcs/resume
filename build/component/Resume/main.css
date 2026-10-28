@@ -36,7 +36,7 @@ body {
 }
 .resume-container .text-info {
   color: #666;
-  margin: 8px;
+  margin: 8px 0;
 }
 .resume-container .text-info i {
   margin: 3px;
@@ -57,7 +57,7 @@ body {
   overflow: hidden;
   position: absolute;
   bottom: -27%;
-  left: 42%;
+  left: 10%;
 }
 .resume-container header img.avatar {
   display: block;
@@ -68,8 +68,11 @@ body {
 }
 .resume-container .basicinfo {
   background-color: #fafafa;
-  text-align: center;
-  padding: 36px 48px 0;
+  text-align: left;
+  padding: 64px 10% 0;
+}
+.resume-container .basicinfo .phone:empty {
+  display: none;
 }
 .resume-container .basicinfo .name {
   font-size: 2.3rem;
@@ -81,18 +84,18 @@ body {
   color: #1f3f64;
 }
 .resume-container .basicinfo .interests {
-  margin: 14px auto 0;
+  margin: 14px 0 0;
   max-width: 680px;
   line-height: 1.6;
 }
 .resume-container .social {
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
-  margin: 18px 8px 0;
+  margin: 18px 10% 0;
 }
 .resume-container .social a.fa {
   color: #1f69b3;
-  margin: 0 8px;
+  margin: 0 16px 0 0;
 }
 .resume-container .social img {
   width: 28px;
@@ -103,27 +106,25 @@ body {
   margin: 32px 10%;
 }
 .resume-container .experiencelist .experience-type {
-  text-align: center;
-  background-color: #dceaf8;
-  border-radius: 26px;
+  text-align: left;
   color: #0f4c8a;
-  display: table;
-  min-width: 132px;
-  padding: 0 18px;
-  margin: 0 auto;
+  margin: 0;
   font-size: 1.2rem;
-  height: 34px;
+  font-weight: 600;
   line-height: 34px;
 }
 .resume-container .experiencelist .experience .item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: 14px;
   color: #999;
   border-bottom: 1px solid #eef2f6;
   margin-top: 16px;
   padding-bottom: 16px;
 }
 .resume-container .experiencelist .experience .item .name-title {
-  margin: 4px;
-  max-width: 64%;
+  margin: 0;
+  min-width: 0;
 }
 .resume-container .experiencelist .experience .item .name-title .name {
   text-decoration: none;
@@ -141,15 +142,26 @@ body {
   margin-top: 4px;
 }
 .resume-container .experiencelist .experience .item .time-location {
-  text-align: right;
+  text-align: left;
   font-size: 0.9rem;
-  margin: 4px;
-  min-width: 160px;
+  margin: 8px 0 0;
+  min-width: 0;
+}
+.resume-container .experiencelist .experience.has-icon .item {
+  grid-template-columns: 58px minmax(0, 1fr);
+}
+.resume-container .experiencelist .experience.has-icon .icon {
+  grid-row: 1 / 3;
+}
+.resume-container .experiencelist .experience.has-icon .time-location {
+  grid-column: 2;
+}
+.resume-container .experiencelist .experience.has-icon .description {
+  margin-left: 72px;
 }
 .resume-container .experiencelist .experience .icon {
   width: 58px;
   height: 58px;
-  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,27 +176,23 @@ body {
   color: rgba(85, 85, 85, 0.9);
   line-height: 1.6;
   margin-top: 8px;
-  margin-left: 72px;
+  margin-left: 0;
   font-size: 0.92rem;
 }
 @media (max-width: 720px) {
   .resume-container {
     margin: 0;
   }
+  .resume-container header .avatar-frame {
+    left: 24px;
+  }
   .resume-container .basicinfo {
-    padding: 28px 24px 0;
+    padding: 64px 24px 0;
+  }
+  .resume-container .social {
+    margin: 18px 24px 0;
   }
   .resume-container .experiencelist {
     margin: 28px 24px;
-  }
-  .resume-container .experiencelist .experience .item .name-title,
-  .resume-container .experiencelist .experience .item .time-location {
-    float: none;
-    max-width: none;
-    min-width: 0;
-    text-align: left;
-  }
-  .resume-container .experiencelist .experience .description {
-    margin-left: 0;
   }
 }
