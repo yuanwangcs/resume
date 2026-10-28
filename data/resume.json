@@ -6,7 +6,7 @@
         "description": "Ph.D. Student in Computer Science and Technology",
         "affiliation": "Huazhong University of Science and Technology",
         "discipline": "Computer Science and Technology",
-        "research_interests": "Research Interests: Index Structures, Database Systems, Emerging Hardware",
+        "research_interests": "Research Interests: Index Structures, KVCache / Agent Infra, GDS",
         "email": "ywangcs@hust.edu.cn"
     },
     "social": [
@@ -54,14 +54,14 @@
                     "description": "Interested in practical index designs for modern data-intensive systems."
                 },
                 {
-                    "name": "Database Systems",
-                    "title": "Storage engines, query processing, and system design",
-                    "description": "Focused on robust and high-performance data management systems."
+                    "name": "KVCache / Agent Infra",
+                    "title": "KV cache management and infrastructure for AI agents",
+                    "description": "Interested in efficient KV cache management and scalable infrastructure for AI agents."
                 },
                 {
-                    "name": "Emerging Hardware",
-                    "title": "System optimization for new hardware platforms",
-                    "description": "Exploring how hardware trends can reshape indexing and storage system design."
+                    "name": "GDS",
+                    "title": "GPUDirect Storage for high-throughput data access",
+                    "description": "Exploring direct data transfers between storage and GPU memory to improve data-intensive workloads."
                 }
             ]
         }
